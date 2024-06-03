@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 import PlaceholderImage from "../assets/placeholders.png";
 import navImage1 from "../assets/navimage1.jpg";
@@ -35,21 +35,24 @@ export const Navigationbar = () => {
   ];
 
   return (
-    <nav className="bg-blue-950 text-xl text-white py-8 lg:py-0 px-2 font-Exo fixed top-0 w-screen">
-      <div className="container mx-auto flex justify-between items-center">
-        <Logo />
+    <>
+      <nav className="bg-blue-950 text-xl text-white py-8 lg:py-0 px-2 font-Exo sticky top-0 w-screen z-10">
+        <div className="container mx-auto flex justify-between items-center">
+          <Logo />
 
-        <div className="lg:flex hidden flex-row gap-8 items-center">
-          {links.map((linkData, index) => (
-            <NavItem key={index} linkData={linkData} />
-          ))}
+          <div className="lg:flex hidden flex-row gap-8 items-center">
+            {links.map((linkData, index) => (
+              <NavItem key={index} linkData={linkData} />
+            ))}
 
-          <ContactInfo />
+            <ContactInfo />
+          </div>
+
+          <MobileNav links={links} />
         </div>
-
-        <MobileNav links={links} />
-      </div>
-    </nav>
+      </nav>
+      <Outlet />
+    </>
   );
 };
 
