@@ -36,7 +36,7 @@ export const Navigationbar = () => {
 
   return (
     <>
-      <nav className="bg-blue-950 text-xl text-white py-8 lg:py-0 px-2 font-Exo sticky top-0 w-screen z-10">
+      <nav className="bg-blue-950 text-xl text-white py-8 lg:py-0 px-2 font-Exo sticky top-0 w-full z-10">
         <div className="container mx-auto flex justify-between items-center">
           <Logo />
 
@@ -119,9 +119,9 @@ const MobileNav = ({ links }) => {
       <div
         className={`${
           isNavbarOpen ? "left-0" : "left-[-100vw]"
-        } absolute bg-slate-600 w-screen h-screen top-0 transition-all ease-in-out`}
+        } absolute bg-slate-600 w-full h-full top-0 transition-all ease-in-out`}
       >
-        <header className="w-screen relative p-10">
+        <header className="w-full relative p-10">
           <Logo />
           <button
             className="absolute right-0 top-0 p-10 hover:text-orange-600"

@@ -2,6 +2,10 @@ import React from "react";
 import { HeroSection } from "../components/HeroSection";
 import placeholderImage from "../assets/heroimage.png";
 import { Button, ServiceArticle } from "../ultilities/ultFunctions";
+import { AboutUsSection } from "../components/AboutUsSection";
+import { CompanyValuesSection } from "../components/CompanyValuesSection";
+import { UserReviews } from "../components/UserReviews";
+import { BlogSection } from "../components/BlogSection";
 export const HomePage = () => {
   return (
     <>
@@ -10,9 +14,24 @@ export const HomePage = () => {
         text={
           "Hassle-free, professional plumbing and heating services in Boston, Lincolnshire"
         }
+        hasButtons={true}
+        centered={false}
+        gradient={"bg-gradient-to-r from-black to-gray-600 opacity-50"}
       />
 
       <ServicesSection />
+      <AboutUsSection />
+      <HeroSection
+        title={"Your Trusted Plumbing and Heating Experts"}
+        text={"Your Trusted Plumbing and Heating Experts"}
+        hasButtons={false}
+        centered={true}
+        gradient={"bg-gradient-to-r from-blue-200 to-blue-600 opacity-50"}
+      />
+
+      <CompanyValuesSection />
+      <UserReviews />
+      <BlogSection />
     </>
   );
 };

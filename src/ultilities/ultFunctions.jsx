@@ -26,3 +26,31 @@ export const ServiceArticle = ({ serviceInfo }) => {
     </article>
   );
 };
+
+export const TitledTextSection = ({ sectionTitle, title, text, children }) => {
+  return (
+    <section className="w-full flex flex-col lg:flex-row gap-4 basis-[calc(100%/3 - 16px)] w-full">
+      <article className="max-w-3xl flex flex-col gap-4 justify-center">
+        <h2 className="font-Exo text-xl text-blue-500">{sectionTitle}</h2>
+        <h1 className="font-Exo text-4xl text-blue-800">{title}</h1>
+        <p className="font-Nunito text-lg text-slate-900">{text}</p>
+      </article>
+
+      <div className="max-w-3xl basis-[calc(100%/3 - 16px)]">{children}</div>
+    </section>
+  );
+};
+
+export const Icon = ({ icon, text, subtext }) => {
+  return (
+    <div className="flex flex-row items-start gap-2 font-Nunito basis-1/3 px-4">
+      <div className="max-w-[100px] max-h-[100px] bg-gray-100 rounded-full">
+        <img src={icon} />
+      </div>
+      <div className="text-blue-600">
+        <h1 className="text-2xl">{text}</h1>
+        <h1 className="text-lg">{subtext}</h1>
+      </div>
+    </div>
+  );
+};

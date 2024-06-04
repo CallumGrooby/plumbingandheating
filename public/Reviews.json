@@ -1,0 +1,39 @@
+{
+    "reviews": [
+      {
+        "id": 1,
+        "user": "John Doe",
+        "rating": 4,
+        "comment": "Great product, very satisfied with the quality!",
+        "date": "2024-06-01"
+      },
+      {
+        "id": 2,
+        "user": "Jane Smith",
+        "rating": 5,
+        "comment": "Excellent service! Fast delivery and good communication.",
+        "date": "2024-05-28"
+      },
+      {
+        "id": 3,
+        "user": "Alex Johnson",
+        "rating": 3,
+        "comment": "Product was okay, but delivery took longer than expected.",
+        "date": "2024-05-25"
+      },
+      {
+        "id": 4,
+        "user": "Emily Brown",
+        "rating": 5,
+        "comment": "Absolutely love it! Will definitely buy again.",
+        "date": "2024-05-20"
+      },
+      {
+        "id": 5,
+        "user": "Michael Wilson",
+        "rating": 2,
+        "comment": "Disappointed with the product quality, not as advertised.",
+        "date": "2024-05-15"
+      }
+    ]
+  }
