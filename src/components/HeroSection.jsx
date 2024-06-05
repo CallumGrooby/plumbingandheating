@@ -7,7 +7,7 @@ export const HeroSection = ({
   text,
   hasButtons,
   centered,
-  gradient,
+  gradient = "bg-gradient-to-r from-black to-gray-600 opacity-50",
 }) => {
   return (
     <section className="relative w-full max-h-[600px]">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ReviewData from "../../public/Reviews.json";
+import ReviewData from "/Reviews.json?url";
 import axios from "axios";
 import { ObjectPagination } from "../ultilities/testPagination";
 

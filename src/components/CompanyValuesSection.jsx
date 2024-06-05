@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { Icon, TitledTextSection } from "../ultilities/ultFunctions";
+import {
+  Icon,
+  SquareIcon,
+  TitledTextSection,
+} from "../ultilities/ultFunctions";
 import placeholderImage from "../assets/heroimage.png";
 import boiler from "../assets/boiler.png";
 
@@ -120,30 +124,18 @@ const WhyUs = ({ selectedButton }) => {
       >
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-4">
-            <SquareIcon />
-            <SquareIcon />
+            <SquareIcon icon={boiler} />
+            <SquareIcon icon={boiler} />
           </div>
           <div className="space-y-4 mt-16">
-            <SquareIcon />
-            <SquareIcon />
+            <SquareIcon icon={boiler} />
+            <SquareIcon icon={boiler} />
           </div>
         </div>
       </TitledTextSection>
     </section>
   );
 };
-
-const SquareIcon = () => (
-  <div className="flex flex-col items-start gap-4 font-Nunito bg-gray-100 rounded-lg max-w-[200px] max-h-[200px] w-full h-full box-border p-2">
-    <div className="max-w-[58px] max-h-[58px] bg-gray-200 rounded-full">
-      <img src={boiler} />
-    </div>
-    <div className="text-blue-600">
-      <h1 className="text-xl">Experienced Team</h1>
-      <h1 className="text-md">Our Employees have a great experience.</h1>
-    </div>
-  </div>
-);
 
 const MissionStatement = ({ selectedButton }) => {
   return (

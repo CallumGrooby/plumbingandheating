@@ -23,9 +23,10 @@ export const Navigationbar = () => {
       navbarLink: "Services",
       to: "",
       submenu: [
-        { title: "Web Design", url: "web-design" },
-        { title: "Web Development", url: "web-dev" },
-        { title: "SEO", url: "seo" },
+        { title: "Gas Engineer", url: "gas-services" },
+        { title: "Oil Heating", url: "heating-services" },
+        { title: "Log Burners & Stoves", url: "log-burners-services" },
+        { title: "Bathroom Installations", url: "bathroom-installations" },
       ],
       img: navImage3,
     },
@@ -84,13 +85,17 @@ const NavDropDown = ({ info }) => (
     <div className="absolute left-1/2 transform -translate-x-1/2 hidden group-hover:flex min-h-[260px]">
       <div className="bg-blue-900 text-white w-full p-8 rounded-bl-3xl min-w-[260px] max-w-[380px]">
         <h2 className="text-xl mb-4">{info.navbarLink}</h2>
-        <ul>
+        <div className="flex flex-col gap-2">
           {info.submenu.map((subMenuItem, index) => (
-            <li className="hover:text-orange-600 mb-2" key={index}>
+            <Link
+              key={index}
+              to={subMenuItem.url}
+              className="hover:text-orange-600 cursor-pointer"
+            >
               {subMenuItem.title}
-            </li>
+            </Link>
           ))}
-        </ul>
+        </div>
       </div>
       <div className="min-w-[400px]">
         <img
