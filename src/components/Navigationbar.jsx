@@ -13,9 +13,8 @@ export const Navigationbar = () => {
       navbarLink: "About",
       to: "",
       submenu: [
-        { title: "Core Values", url: "web-design" },
-        { title: "FAQs", url: "web-dev" },
-        { title: "Reviews", url: "seo" },
+        { title: "Core Values", url: "values" },
+        { title: "FAQs", url: "faqs" },
       ],
       img: navImage1,
     },
@@ -30,7 +29,7 @@ export const Navigationbar = () => {
       ],
       img: navImage3,
     },
-    { navbarLink: "Show Room", to: "", submenu: null },
+    { navbarLink: "Show Room", to: "showroom", submenu: null },
     { navbarLink: "Contact Us", to: "", submenu: null },
     { navbarLink: "News", to: "", submenu: null },
   ];
