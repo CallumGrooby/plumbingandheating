@@ -3,7 +3,7 @@ import { HeroSection } from "../components/HeroSection";
 import { ServicesSection } from "../components/ServicesSection";
 import placeholderImage from "../assets/placeholders.png";
 import boiler from "../assets/boiler.png";
-import { TitledTextSection } from "../ultilities/ultFunctions";
+import { Header, TitledTextSection } from "../ultilities/ultFunctions";
 
 export const OilHeatingService = () => {
   const servicesInfo = [
@@ -88,13 +88,8 @@ const WhyUs = () => {
 
   return (
     <section className="container mx-auto py-16">
-      <header>
-        <h1 className="font-Exo text-4xl text-blue-800 text-center">
-          Why Choose Us?
-        </h1>
-      </header>
+      <Header title={"Why Choose Us?"} />
 
-      {/* [&>*:nth-child(even)]:translate-y-1/3  sm:[&>*:nth-child(even)]:translate-y-0 */}
       <section className="gap-16 py-16 px-8  flex flex-col xl:flex-row [&>*:nth-child(even)]:translate-y-0  xl:[&>*:nth-child(even)]:translate-y-1/3 ">
         {sections.map((section, index) => {
           return (

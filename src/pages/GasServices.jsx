@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { HeroSection } from "../components/HeroSection";
 import placeholderImage from "../assets/placeholders.png";
 import boiler from "../assets/boiler.png";
@@ -9,6 +9,7 @@ import {
   TitledTextSection,
 } from "../ultilities/ultFunctions";
 import { FAQs } from "../components/FAQSection";
+import { useInView, motion } from "framer-motion";
 export const GasServices = () => {
   const servicesInfo = [
     {
@@ -131,6 +132,9 @@ const OurServices = () => {
     },
   ];
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <section
       className={` w-full max-w-[1300px] mx-auto py-8  flex flex-col  items-center`}
@@ -143,9 +147,21 @@ const OurServices = () => {
         <img src={placeholderImage} alt="" className="rounded-t-2xl" />
       </TitledTextSection>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 lg:grid-cols-3 gap-4">
+      <div
+        className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 lg:grid-cols-3 gap-4"
+        ref={ref}
+      >
         {servicesInfo.map((service, index) => {
-          return <SquareIcon key={index} icon={boiler} />;
+          return (
+            <SquareIcon
+              key={index}
+              title={"Test"}
+              text={"test"}
+              icon={boiler}
+              isInView={isInView}
+              index={index}
+            />
+          );
         })}
       </div>
     </section>

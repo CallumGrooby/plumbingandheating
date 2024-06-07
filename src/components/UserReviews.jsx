@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ReviewData from "/Reviews.json?url";
 import axios from "axios";
 import { ObjectPagination } from "../ultilities/testPagination";
+import { useInView, motion } from "framer-motion";
+import { Header } from "../ultilities/ultFunctions";
 
 export const UserReviews = () => {
   const reviews = [
@@ -46,17 +48,12 @@ export const UserReviews = () => {
       date: "2024-05-15",
     },
   ];
-
   return (
     <section className="container mx-auto my-16 px-4">
-      <header className="text-center">
-        <h1 className="font-Exo text-3xl text-blue-800">
-          What Our Valued Customers Think
-        </h1>
-        <p className="text-xl text-blue-500">
-          Take a look at some of the reviews from our valued customers.
-        </p>
-      </header>
+      <Header
+        title={"What Our Valued Customers Think"}
+        text={"Take a look at some of the reviews from our valued customers."}
+      />
 
       <ObjectPagination
         objects={reviews}

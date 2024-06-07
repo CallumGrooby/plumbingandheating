@@ -38,8 +38,6 @@ export const BlogSection = () => {
         text={`Our mission is to deliver exceptional plumbing and heating services with a focus on customer satisfaction. 
             We strive to be Boston's leading provider, known for our reliability, professionalism, and dedication to quality.`}
       >
-        {/* <img src={placeholderImage} alt="" className="rounded-t-2xl" /> */}
-
         <ObjectPagination
           objects={reviews}
           objectsPerPage={2}

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import { HeroSection } from "../components/HeroSection";
 import { BlogSection } from "../components/BlogSection";
 import { SquareIcon } from "../ultilities/ultFunctions";
 import boiler from "../assets/boiler.png";
+import { useInView, motion } from "framer-motion";
 export const CoreValues = () => {
   return (
     <>
@@ -80,8 +81,24 @@ const Values = () => {
 };
 
 const Icon = ({ title, text, icon }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <div className="flex flex-col items-start gap-4 font-Nunito bg-gray-100 rounded-lg w-full h-full box-border p-2">
+    <motion.div
+      ref={ref}
+      className="flex flex-col items-start gap-4 font-Nunito bg-gray-100 rounded-lg w-full h-full box-border p-2"
+      initial={{ opacity: 0, y: 40 }}
+      animate={
+        isInView
+          ? {
+              opacity: 1,
+              y: 0,
+              transition: { delay: 0.4, duration: 0.5 },
+            }
+          : { opacity: 0, y: 40 }
+      }
+    >
       <div className="max-w-[58px] max-h-[58px] bg-gray-200 rounded-full">
         <img src={icon} />
       </div>
@@ -89,6 +106,6 @@ const Icon = ({ title, text, icon }) => {
         <h1 className="text-xl text-blue-800">{title}</h1>
         <h1 className="text-md text-blue-500">{text}</h1>
       </div>
-    </div>
+    </motion.div>
   );
 };

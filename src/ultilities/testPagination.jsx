@@ -1,4 +1,5 @@
-import React, { Children, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { useInView, motion } from "framer-motion";
 
 export const ObjectPagination = ({
   objects,
@@ -7,13 +8,13 @@ export const ObjectPagination = ({
   containerCSS,
 }) => {
   const [currentPage, setCurrentPage] = useState(0);
-
   const totalPages = Math.ceil(objects.length / objectsPerPage);
-
   const indexOfLastObject = Math.min(currentPage + 1) * objectsPerPage;
   const indexOfFirstObject = indexOfLastObject - objectsPerPage;
-
   const currentObjects = objects.slice(indexOfFirstObject, indexOfLastObject);
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
@@ -35,9 +36,23 @@ export const ObjectPagination = ({
     <section className="w-full">
       <div className={containerCSS}>
         {currentObjects.map((object, index) => (
-          <article className="" key={index}>
+          <motion.article
+            ref={ref}
+            className=""
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={
+              isInView
+                ? {
+                    opacity: 1,
+                    y: 0,
+                    transition: { delay: 0.4 * index, duration: 0.5 },
+                  }
+                : { opacity: 0, y: 20 }
+            }
+          >
             {renderItem(object)}
-          </article>
+          </motion.article>
         ))}
       </div>
 

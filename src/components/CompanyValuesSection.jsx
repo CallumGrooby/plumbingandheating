@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   Icon,
   SquareIcon,
@@ -6,8 +6,12 @@ import {
 } from "../ultilities/ultFunctions";
 import placeholderImage from "../assets/heroimage.png";
 import boiler from "../assets/boiler.png";
+import { motion, useInView } from "framer-motion";
 
 export const CompanyValuesSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   const [selectedButton, setSelectedButton] = useState(1);
 
   const handleButtonClick = (buttonId) => {
@@ -15,7 +19,7 @@ export const CompanyValuesSection = () => {
   };
 
   return (
-    <section className="relative">
+    <section className="relative" ref={ref}>
       <ButtonGroup
         selectedButton={selectedButton}
         handleButtonClick={handleButtonClick}
@@ -31,33 +35,52 @@ export const CompanyValuesSection = () => {
 };
 
 const ButtonGroup = ({ selectedButton, handleButtonClick }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <nav className="flex flex-row gap-4 absolute top-0 w-full h-[80px] justify-center z-50 -translate-y-1/2">
+    <nav
+      className="flex flex-row gap-4 absolute top-0 w-full h-[80px] justify-center z-50 -translate-y-1/2"
+      ref={ref}
+    >
       <Button
         handleButtonClick={handleButtonClick}
         buttonId={1}
         selectedButton={selectedButton}
         text={"Our Approach"}
+        isInView={isInView}
+        index={0}
       />
       <Button
         handleButtonClick={handleButtonClick}
         buttonId={2}
         selectedButton={selectedButton}
         text={"Why Us"}
+        isInView={isInView}
+        index={1}
       />
       <Button
         handleButtonClick={handleButtonClick}
         buttonId={3}
         selectedButton={selectedButton}
         text={"Mission Statement"}
+        isInView={isInView}
+        index={2}
       />
     </nav>
   );
 };
 
-const Button = ({ text, handleButtonClick, buttonId, selectedButton }) => {
+const Button = ({
+  text,
+  handleButtonClick,
+  buttonId,
+  selectedButton,
+  isInView = true,
+  index = 0,
+}) => {
   return (
-    <button
+    <motion.button
       onClick={() => handleButtonClick(buttonId)}
       className={`relative max-w-[350px] max-h-[100px] h-full w-full font-Exo rounded-md text-xl 
         hover:bg-gradient-to-r from-orange-600 to-orange-400 hover:text-white transition-all duration-500 
@@ -66,10 +89,20 @@ const Button = ({ text, handleButtonClick, buttonId, selectedButton }) => {
             ? "bg-gradient-to-r from-orange-600 to-orange-400 text-white"
             : "bg-slate-100 text-blue-800"
         }`}
+      initial={{ opacity: 0, y: 20 }}
+      animate={
+        isInView
+          ? {
+              opacity: 1,
+              y: 0,
+              transition: { delay: index * 0.2, duration: 0.5 },
+            }
+          : { opacity: 0, y: 20 }
+      }
     >
       <span className="absolute top-0 left-0">+</span>
       <h1>{text}</h1>
-    </button>
+    </motion.button>
   );
 };
 
@@ -88,21 +121,24 @@ const OurApproach = ({ selectedButton }) => {
         <img src={placeholderImage} alt="" className="rounded-t-2xl" />
       </TitledTextSection>
 
-      <div className="grid grid-cols-3 grid-rows-1 gap-8 py-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 grid-rows-1 gap-8 p-8 ">
         <Icon
           icon={boiler}
           text={"Plumbing Specialists"}
           subtext={`Our Gas Safe registered engineers work intelligently to provide optimal solutions for all your plumbing and heating needs, ensuring precise and efficient execution.`}
+          index={0}
         />
         <Icon
           icon={boiler}
           text={"Customer-Centric Approach"}
           subtext={`We prioritize our customers by taking the time to explain all aspects of your plumbing and heating systems, helping you understand how to maintain them effectively.`}
+          index={1}
         />
         <Icon
           icon={boiler}
           text={"Industry Leaders"}
           subtext={`With over 20 years of experience, we stay ahead by integrating the latest advancements in plumbing and heating technologies, offering reliable and innovative solutions.`}
+          index={2}
         />
       </div>
     </section>
