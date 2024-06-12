@@ -3,6 +3,10 @@ import { HeroSection } from "../components/HeroSection";
 import { ServicesSection } from "../components/ServicesSection";
 import placeholderImage from "../assets/placeholders.png";
 import boiler from "../assets/boiler.png";
+import registered from "../assets/icons/quality.png";
+import plumbing from "../assets/icons/plumbing.png";
+import customer from "../assets/icons/customer-statisfaction.png";
+
 import { Header, TitledTextSection } from "../ultilities/ultFunctions";
 
 export const OilHeatingService = () => {
@@ -73,14 +77,17 @@ export const OilHeatingService = () => {
 const WhyUs = () => {
   const sections = [
     {
+      icon: registered,
       title: "OFTEC Registered",
       text: "Our highly trained engineers are certified and adhere to the highest safety standards",
     },
     {
+      icon: plumbing,
       title: "Local Expertise",
       text: "Serving Boston, Lincolnshire, with a deep understanding of local requirements.",
     },
     {
+      icon: customer,
       title: "Customer Satisfaction",
       text: "We strive to provide the best service and ensure our customers are happy.",
     },
@@ -98,7 +105,7 @@ const WhyUs = () => {
               className="font-Exo basis-1/3 h-full flex flex-col gap-4 shadow-md rounded-3xl p-8"
             >
               <div className="max-h-20 max-w-20">
-                <img src={boiler} alt="" />
+                <img src={section.icon} alt="" />
               </div>
 
               <h1 className="text-blue-800 text-3xl">{section.title}</h1>

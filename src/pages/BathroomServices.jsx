@@ -2,7 +2,11 @@ import React from "react";
 import { HeroSection } from "../components/HeroSection";
 import { TitledTextSection } from "../ultilities/ultFunctions";
 import placeholderImage from "../assets/placeholders.png";
-import boiler from "../assets/boiler.png";
+
+import bathroom from "../assets/icons/bathroom.png";
+import wetroom from "../assets/icons/wetroom.png";
+import ensuite from "../assets/icons/ensuite.png";
+import cloakroom from "../assets/icons/cloakroom.png";
 
 import image1 from "../assets/image1.webp";
 import image2 from "../assets/image2.webp";
@@ -18,22 +22,22 @@ export const BathroomServices = () => {
     {
       title: "Bathrooms",
       text: "We provide full bathroom installations, ensuring every detail is perfect for your unique space.",
-      image: boiler,
+      image: bathroom,
     },
     {
       title: "Wetrooms",
       text: "Our wetroom installations blend functionality and style, offering a sleek and modern solution.",
-      image: boiler,
+      image: wetroom,
     },
     {
       title: "Ensuites",
       text: "Add a luxurious ensuite to your bedroom with our expert installation services, tailored to your needs.",
-      image: boiler,
+      image: ensuite,
     },
     {
       title: "Cloakrooms",
       text: "Transform your cloakroom with our stylish fittings and expert craftsmanship, making the most of the space.",
-      image: boiler,
+      image: cloakroom,
     },
   ];
   return (

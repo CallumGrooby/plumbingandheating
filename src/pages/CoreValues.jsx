@@ -2,7 +2,14 @@ import React, { useRef } from "react";
 import { HeroSection } from "../components/HeroSection";
 import { BlogSection } from "../components/BlogSection";
 import { SquareIcon } from "../ultilities/ultFunctions";
-import boiler from "../assets/boiler.png";
+
+import quality from "../assets/icons/quality.png";
+import customer from "../assets/icons/customer-statisfaction.png";
+import trust from "../assets/icons/trust.png";
+import innovation from "../assets/icons/innovation.png";
+import development from "../assets/icons/development.png";
+import community from "../assets/icons/community.png";
+
 import { useInView, motion } from "framer-motion";
 export const CoreValues = () => {
   return (
@@ -25,32 +32,32 @@ export const CoreValues = () => {
 const Values = () => {
   const values = [
     {
-      icon: boiler,
+      icon: quality,
       title: "Quality and Excellence",
       text: "At Endeavour Plumbing and Heating, we are committed to delivering the highest quality of service and workmanship in every project we undertake. Our team of skilled professionals ensures that each task is completed to the highest standards, providing reliable and efficient solutions for all your plumbing and heating needs.",
     },
     {
-      icon: boiler,
+      icon: customer,
       title: "Customer Satisfaction",
       text: "Our customers are at the heart of everything we do. We strive to exceed expectations by offering personalized services, timely responses, and transparent communication. Your satisfaction is our top priority, and we work diligently to ensure you are fully satisfied with our services.",
     },
     {
-      icon: boiler,
+      icon: trust,
       title: "Integrity and Trust",
       text: "Integrity and trust are the foundations of our business. We believe in honest, open communication and delivering on our promises. Our clients can count on us for dependable advice, fair pricing, and ethical practices in all aspects of our work.",
     },
     {
-      icon: boiler,
+      icon: innovation,
       title: "Innovation and Improvement",
       text: "We are dedicated to continuous improvement and staying at the forefront of industry advancements. By embracing new technologies and innovative solutions, we ensure that our services are efficient, up-to-date, and environmentally friendly. Our commitment to innovation helps us provide better solutions for our customers and maintain our competitive edge.",
     },
     {
-      icon: boiler,
+      icon: development,
       title: "Professional Development",
       text: "We invest in the continuous professional development of our team, ensuring they stay current with industry standards and advancements. Our commitment to training and education enables us to offer the best and most knowledgeable service to our clients.",
     },
     {
-      icon: boiler,
+      icon: community,
       title: "Community Engagement",
       text: "We believe in giving back to the community that supports us. Endeavour Plumbing and Heating actively participates in local initiatives and supports community programs, reinforcing our dedication to being a responsible and involved local business.",
     },
