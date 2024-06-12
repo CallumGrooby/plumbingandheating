@@ -6,6 +6,13 @@ import {
 } from "../ultilities/ultFunctions";
 import placeholderImage from "../assets/heroimage.png";
 import boiler from "../assets/boiler.png";
+import plumbing from "../assets/icons/plumbing.png";
+import customerStatisfaction from "../assets/icons/customer-statisfaction.png";
+import industryLeaders from "../assets/icons/industry-leaders.png";
+import vision from "../assets/icons/vision.png";
+import principles from "../assets/icons/principles.png";
+import values from "../assets/icons/values.png";
+
 import { motion, useInView } from "framer-motion";
 
 export const CompanyValuesSection = () => {
@@ -123,19 +130,19 @@ const OurApproach = ({ selectedButton }) => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 grid-rows-1 gap-8 p-8 ">
         <Icon
-          icon={boiler}
+          icon={plumbing}
           text={"Plumbing Specialists"}
           subtext={`Our Gas Safe registered engineers work intelligently to provide optimal solutions for all your plumbing and heating needs, ensuring precise and efficient execution.`}
           index={0}
         />
         <Icon
-          icon={boiler}
+          icon={customerStatisfaction}
           text={"Customer-Centric Approach"}
           subtext={`We prioritize our customers by taking the time to explain all aspects of your plumbing and heating systems, helping you understand how to maintain them effectively.`}
           index={1}
         />
         <Icon
-          icon={boiler}
+          icon={industryLeaders}
           text={"Industry Leaders"}
           subtext={`With over 20 years of experience, we stay ahead by integrating the latest advancements in plumbing and heating technologies, offering reliable and innovative solutions.`}
           index={2}
@@ -188,23 +195,24 @@ const MissionStatement = ({ selectedButton }) => {
         <img src={placeholderImage} alt="" className="rounded-t-2xl" />
       </TitledTextSection>
 
-      <div className="flex lg:flex-row  flex-col py-8 gap-8 [&>*:nth-child(odd)]:flex-row-reverse lg:[&>*:nth-child(odd)]:flex-row lg:items-start items-center">
+      {/* [&>*:nth-child(odd)]:flex-row-reverse lg:[&>*:nth-child(odd)]:flex-row lg:items-start items-center */}
+      <div className="flex lg:flex-row  flex-col py-8 gap-8">
         <Icon
-          icon={boiler}
+          icon={vision}
           text={"Our Vision"}
           subtext={`Our vision is to be the leading provider of comprehensive plumbing and heating solutions, measured by our sustained growth and customer loyalty. We aim to continually enhance our services and offerings to meet evolving needs and exceed expectations.`}
         />
         <Icon
-          icon={boiler}
+          icon={principles}
           text={"Our Principles"}
           subtext={`We are commitment to Excellence: We are committed to delivering excellence in every aspect of our work, from customer service to technical expertise, ensuring the highest quality outcomes.`}
         />
         <Icon
-          icon={boiler}
+          icon={values}
           text={"Our Values"}
-          subtext={`->Customer satisfaction is our priority
-          -> Teamwork drives our success.
-          ->Community support is paramount.`}
+          subtext={`Customer satisfaction is our priority.
+          Teamwork drives our success.
+          Community support is paramount.`}
         />
       </div>
     </section>

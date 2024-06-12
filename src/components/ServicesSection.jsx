@@ -18,10 +18,7 @@ export const ServicesSection = ({ services }) => {
 
       {/* flex flex-col lg:flex-row lg:flex-nowrap flex-wrap container gap-4 mx-auto content-center justify-between */}
       <div className="flex items-center justify-center my-8">
-        <section
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-          ref={ref}
-        >
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-4" ref={ref}>
           {services.map((serviceInfo, index) => {
             return (
               <ServiceArticle

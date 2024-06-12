@@ -5,6 +5,7 @@ import PlaceholderImage from "../assets/placeholders.png";
 import navImage1 from "../assets/navimage1.jpg";
 import navImage2 from "../assets/navimage2.jpg";
 import navImage3 from "../assets/navimage3.jpg";
+import { Logo } from "../ultilities/ultFunctions";
 
 export const Navigationbar = () => {
   const links = [
@@ -30,8 +31,8 @@ export const Navigationbar = () => {
       img: navImage3,
     },
     { navbarLink: "Show Room", to: "showroom", submenu: null },
-    { navbarLink: "Contact Us", to: "", submenu: null },
-    { navbarLink: "News", to: "", submenu: null },
+    { navbarLink: "Contact Us", to: "contact-us", submenu: null },
+    { navbarLink: "News", to: "news", submenu: null },
   ];
 
   return (
@@ -55,13 +56,6 @@ export const Navigationbar = () => {
     </>
   );
 };
-
-const Logo = () => (
-  <div className="flex items-center">
-    <img src={PlaceholderImage} alt="Logo" className="h-8 mr-3" />
-    <span className="text-xl font-bold">Bishop</span>
-  </div>
-);
 
 const NavItem = ({ linkData }) => {
   if (linkData.submenu) {

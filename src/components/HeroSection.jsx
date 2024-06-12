@@ -11,18 +11,18 @@ export const HeroSection = ({
 }) => {
   return (
     <section className="relative w-full max-h-[600px]">
-      <div className="relative w-full h-full max-h-[600px]">
+      <div className="relative w-full h-full min-h-[400px] max-h-[600px]">
         {/* Image */}
         <img
           src={placeHolderImage}
           alt="background"
-          className="w-full h-full object-cover max-h-[600px] rounded-b-[200px] "
+          className="w-full h-full object-cover min-h-[400px] max-h-[600px] rounded-b-[200px] "
         />
 
         {/* Gradient Overlay */}
         <div className={`absolute inset-0 rounded-b-[200px] ${gradient}`}></div>
 
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+        <div className="w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           <div
             className={`container h-full mx-auto flex flex-col justify-center text-white gap-4 text-center ${
               centered ? "" : "lg:text-start"

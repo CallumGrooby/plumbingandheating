@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import PlaceholderImage from "../assets/placeholders.png";
 
 export const Button = ({ isBlue }) => {
   return (
@@ -56,6 +57,13 @@ export const Header = ({ title, text }) => {
   );
 };
 
+export const Logo = () => (
+  <div className="flex items-center">
+    <img src={PlaceholderImage} alt="Logo" className="h-16 mr-3" />
+    <h1 className="text-4xl font-bold text-white font-Exo">Bishop</h1>
+  </div>
+);
+
 export const ServiceArticle = ({ serviceInfo, isInView = true, index = 0 }) => {
   return (
     <motion.article
@@ -91,11 +99,11 @@ export const TitledTextSection = ({ sectionTitle, title, text, children }) => {
 
   return (
     <motion.section
-      className="w-full flex flex-col xl:flex-row gap-4 basis-[calc(100%/3 - 16px)] w-full items-center justify-center"
+      className="container mx-auto w-full flex flex-col xl:flex-row gap-4 basis-[calc(100%/3 - 16px)] w-full items-center justify-center"
       ref={ref}
     >
       <motion.article
-        className="max-w-3xl flex flex-col gap-4 justify-center"
+        className="basis-1/2 flex flex-col gap-4 justify-center"
         initial={{ opacity: 0 }}
         animate={
           isInView
@@ -111,7 +119,7 @@ export const TitledTextSection = ({ sectionTitle, title, text, children }) => {
         <p className="font-Nunito text-lg text-slate-900">{text}</p>
       </motion.article>
 
-      <div className="max-w-3xl basis-[calc(100%/3 - 16px)]">{children}</div>
+      <div className="basis-1/2">{children}</div>
     </motion.section>
   );
 };
@@ -119,7 +127,7 @@ export const TitledTextSection = ({ sectionTitle, title, text, children }) => {
 export const Icon = ({ icon, text, subtext, isInView = true, index = 0 }) => {
   return (
     <motion.div
-      className="flex flex-row items-start gap-2 font-Nunito basis-1/3 px-4"
+      className="flex flex-col md:flex-row items-center gap-4 font-Nunito basis-1/3 px-4 md:items-start"
       initial={{ opacity: 0, y: 20 }}
       animate={
         isInView
@@ -131,10 +139,10 @@ export const Icon = ({ icon, text, subtext, isInView = true, index = 0 }) => {
           : { opacity: 0, y: 20 }
       }
     >
-      <div className="max-w-[100px] max-h-[100px] bg-gray-100 rounded-full">
+      <div className="w-full max-w-[80px] max-h-[80px] bg-gray-100 rounded-full">
         <img src={icon} />
       </div>
-      <div className="text-blue-600">
+      <div className="text-blue-600 flex-grow">
         <h1 className="text-2xl">{text}</h1>
         <h1 className="text-lg">{subtext}</h1>
       </div>
@@ -171,3 +179,27 @@ export const SquareIcon = ({
     </div>
   </motion.div>
 );
+
+export const CheckIfVideo = ({ objectToCheck }) => {
+  if (objectToCheck.match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
+    console.log("image");
+    return (
+      <img
+        src={objectToCheck}
+        className=" object-cover mx-auto h-full w-full rounded-b-3xl"
+      />
+    );
+  } else {
+    console.log("video");
+    return (
+      <video
+        className=" mx-auto h-full w-full rounded-b-3xl"
+        controls
+        autoPlay
+        muted
+      >
+        <source src={objectToCheck} type="video/mp4" />
+      </video>
+    );
+  }
+};

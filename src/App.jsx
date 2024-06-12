@@ -8,6 +8,18 @@ import { BathroomServices } from "./pages/BathroomServices";
 import { CoreValues } from "./pages/CoreValues";
 import { FAQsPage } from "./pages/FAQsPage";
 import { Showroom } from "./pages/Showroom";
+import { Footer } from "./components/Footer";
+import { ContactUs } from "./pages/ContactUs";
+
+import {
+  faFacebook,
+  faLinkedin,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { News } from "./pages/News";
+import { BlogPost } from "./pages/BlogPost";
+library.add(faFacebook, faLinkedin, faInstagram);
 
 function App() {
   return (
@@ -26,10 +38,13 @@ function App() {
             />
             <Route path="/values" element={<CoreValues />} />
             <Route path="/faqs" element={<FAQsPage />} />
-
             <Route path="/showroom" element={<Showroom />} />
+            <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
           </Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

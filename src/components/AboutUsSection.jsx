@@ -1,6 +1,9 @@
 import React, { useRef } from "react";
 import placeholderImage from "../assets/heroimage.png";
 import boiler from "../assets/boiler.png";
+import leak from "../assets/icons/leak.png";
+import bathroom from "../assets/icons/bathroom.png";
+
 import { Icon, TitledTextSection } from "../ultilities/ultFunctions";
 import { inView, motion, useInView } from "framer-motion";
 
@@ -23,13 +26,13 @@ export const AboutUsSection = () => {
         </TitledTextSection>
 
         <motion.div
-          className="flex flex-row gap-4 mt-8 justify-center"
+          className="flex flex-col sm:flex-row gap-4 mt-8 justify-center"
           ref={ref}
         >
           <Icon
-            icon={boiler}
-            text={"2000+"}
-            subtext={"Boiler Installed"}
+            icon={leak}
+            text={"10000+"}
+            subtext={"Leaks Fixed"}
             index={0}
             isInView={isInView}
           />
@@ -42,9 +45,9 @@ export const AboutUsSection = () => {
           />
 
           <Icon
-            icon={boiler}
-            text={"2000+"}
-            subtext={"Boiler Installed"}
+            icon={bathroom}
+            text={"100+"}
+            subtext={"Bathrooms Installed"}
             index={1}
             isInView={isInView}
           />
