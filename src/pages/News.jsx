@@ -17,10 +17,13 @@ export const News = () => {
   );
 };
 
-const BlogArticle = ({ post, index }) => {
+export const BlogArticle = ({ post, index }) => {
   return (
-    <Link to={`/blog/${index}`} className="flex flex-col md:flex-row gap-4 p-4">
-      <div className="basis-[400px]">
+    <Link
+      to={`/blog/${index}`}
+      className="flex flex-col md:flex-row gap-4 p-4   lg:max-h-[400px] max-h-full basis-1/2"
+    >
+      <div className="basis-1/2">
         {/* <img src={post.img} className="w-full h-full" /> */}
         <CheckIfVideo objectToCheck={post.img} />
       </div>
@@ -33,7 +36,7 @@ const BlogArticle = ({ post, index }) => {
         </div>
 
         <h1 className="text-2xl font-Exo">{post.title}</h1>
-        <p className="font-Nunito">{post.text[0]}</p>
+        <p className="font-Nunito overflow-hidden">{post.text[0]}</p>
       </div>
     </Link>
   );

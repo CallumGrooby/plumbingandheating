@@ -6,7 +6,7 @@ import bathroom from "../assets/icons/bathroom.png";
 
 import { Icon, TitledTextSection } from "../ultilities/ultFunctions";
 import { inView, motion, useInView } from "framer-motion";
-
+import boilerRepair from "../assets/images/boilerrepair.jpg";
 export const AboutUsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -22,7 +22,7 @@ export const AboutUsSection = () => {
           title={"Nobody Woo's Clients Like We Do"}
           sectionTitle={"About Us"}
         >
-          <img src={placeholderImage} alt="" className="rounded-t-2xl" />
+          <img src={boilerRepair} alt="" className="rounded-t-2xl" />
         </TitledTextSection>
 
         <motion.div

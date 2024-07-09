@@ -5,6 +5,9 @@ import placeholderImage from "../assets/placeholders.png";
 import boiler from "../assets/boiler.png";
 import { Process } from "../components/Process";
 
+import LogBurner from "../assets/images/logburner.jpg";
+import LogBurner2 from "../assets/images/logburner2.jpg";
+import LogBurnerHero from "../assets/images/logburnerHero.jpg";
 export const StovesSection = () => {
   return (
     <>
@@ -15,25 +18,25 @@ export const StovesSection = () => {
         }
         title={"Log Burners & Multi-fuel stoves"}
         hasButtons={true}
+        image={LogBurner2}
       />
 
       <section
-        className={`transition-all duration-300 w-full max-w-[1300px] mx-auto `}
+        className={`transition-all duration-300 w-full max-w-[1300px] mx-auto my-4`}
       >
         <TitledTextSection
-          text={`Our team proudly offers an on-time guarantee and a 100% customer satisfaction guarantee.
-          It's why we make sure that our licensed plumbers are highly trained and fully equipped to meet your home's diverse plumbing service needs.`}
-          title={"Nobody Woo's Clients Like We Do"}
+          text={`Experience the ultimate in home comfort with our exquisite range of log burners and multi-fuel stoves. Whether you're seeking rustic charm or contemporary elegance, we have the perfect option to complement your space. Enjoy the soothing glow and radiant heat of a wood burning stove, creating an inviting atmosphere for relaxing evenings with family and friends. Explore our collection today and add a touch of warmth and sophistication to your home.`}
+          title={"Embrace Cozy Comfort with Log Burners & Multi-fuel Stoves"}
           sectionTitle={"About Us"}
         >
-          <img src={placeholderImage} alt="" className="rounded-t-2xl" />
+          <img src={LogBurner} alt="" className="rounded-t-2xl" />
         </TitledTextSection>
       </section>
 
       <InstallProcess />
 
       <section
-        className={`transition-all duration-300 w-full max-w-[1300px] mx-auto `}
+        className={`transition-all duration-300 w-full max-w-[1300px] mx-auto my-4`}
       >
         <TitledTextSection
           text={`Reliable, seasoned, and fully accredited. Our stove packages are installed to the highest standards by our highly qualified HETAS engineers, adhering to the strictest and safest regulations.
@@ -41,7 +44,7 @@ export const StovesSection = () => {
           title={"We are Fully Qualified HETAS Registered Installers"}
           sectionTitle={"HETAs Registered"}
         >
-          <img src={placeholderImage} alt="" className="rounded-t-2xl" />
+          <img src={LogBurner2} alt="" className="rounded-t-2xl" />
         </TitledTextSection>
       </section>
     </>

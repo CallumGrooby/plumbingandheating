@@ -38,10 +38,10 @@ export const Navigationbar = () => {
   return (
     <>
       <nav className="bg-blue-950 text-xl text-white py-8 lg:py-0 px-2 font-Exo sticky top-0 w-full z-10">
-        <div className="container mx-auto flex justify-between items-center">
+        <div className="container mx-auto flex justify-between items-center ">
           <Logo />
 
-          <div className="lg:flex hidden flex-row gap-8 items-center">
+          <div className=" lg:flex hidden flex-row gap-8 items-center">
             {links.map((linkData, index) => (
               <NavItem key={index} linkData={linkData} />
             ))}
@@ -117,9 +117,9 @@ const MobileNav = ({ links }) => {
       <div
         className={`${
           isNavbarOpen ? "left-0" : "left-[-100vw]"
-        } absolute bg-slate-600 w-full h-full top-0 transition-all ease-in-out`}
+        } absolute bg-blue-950 w-full h-full top-0 transition-all ease-in-out`}
       >
-        <header className="w-full relative p-10">
+        <header className="w-full relative p-10  bg-blue-950">
           <Logo />
           <button
             className="absolute right-0 top-0 p-10 hover:text-orange-600"
@@ -129,7 +129,7 @@ const MobileNav = ({ links }) => {
           </button>
         </header>
 
-        <div className="flex flex-col px-10 gap-2">
+        <div className="flex flex-col px-10 gap-4 pb-6 bg-blue-950 ">
           {links.map((linkData, index) => (
             <MobileNavItem key={index} linkData={linkData} />
           ))}
@@ -156,25 +156,28 @@ const DropDownItems = ({ linkData }) => {
 
   return (
     <>
-      <div
-        onClick={() => setShowDropDown(!showDropDown)}
-        className="hover:text-orange-600 cursor-pointer"
-      >
-        {linkData.navbarLink}
-      </div>
-
-      <ul
-        className={`transition-all ease-in-out duration-500
+      <div onClick={() => setShowDropDown(!showDropDown)}>
+        <h1 className="hover:text-orange-600 cursor-pointer">
+          {linkData.navbarLink}
+        </h1>
+        <div
+          className={`flex flex-col gap-2 
+          transition-all ease-in-out duration-500
         ${showDropDown ? "max-h-[400px]" : "max-h-0"}
           overflow-hidden
         `}
-      >
-        {linkData.submenu.map((subMenuItem, index) => (
-          <li className="hover:text-orange-600 mb-2 ml-8" key={index}>
-            {subMenuItem.title}
-          </li>
-        ))}
-      </ul>
+        >
+          {linkData.submenu.map((subMenuItem, index) => (
+            <Link
+              to={subMenuItem.url}
+              className="hover:text-orange-600 mb-2 ml-8"
+              key={index}
+            >
+              {subMenuItem.title}
+            </Link>
+          ))}
+        </div>{" "}
+      </div>
     </>
   );
 };

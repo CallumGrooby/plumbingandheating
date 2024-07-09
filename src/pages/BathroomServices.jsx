@@ -16,6 +16,8 @@ import image5 from "../assets/image5.webp";
 import image6 from "../assets/image6.webp";
 import image7 from "../assets/image7.webp";
 import { Process } from "../components/Process";
+import bathRoomHero from "../assets/bathroomHero.jpg";
+import bathRoomImage from "../assets/images/BathroomInstallation.jpg";
 
 export const BathroomServices = () => {
   const processInfo = [
@@ -49,6 +51,7 @@ export const BathroomServices = () => {
         }
         title={"Elevate Your Home with Exceptional Bathroom Installations"}
         hasButtons={true}
+        image={bathRoomHero}
       />
 
       <section className={`container mx-auto my-16`}>
@@ -58,7 +61,11 @@ export const BathroomServices = () => {
           title={"Transform Your Bathroom with Expert Installation Services"}
           sectionTitle={"Our Services"}
         >
-          <img src={placeholderImage} alt="" className="rounded-t-2xl" />
+          <img
+            src={bathRoomImage}
+            alt=""
+            className="rounded-t-2xl w-full object-cover"
+          />
         </TitledTextSection>
         <Process title={""} text={""} processInfo={processInfo} />
       </section>
@@ -73,7 +80,7 @@ function ImageGrid({ images, cols }) {
     <section
       className={`grid grid-cols-1 md:grid-cols-${
         cols / 2
-      } lg:grid-cols-${cols} gap-4 mb-4`}
+      } lg:grid-cols-${cols} gap-4 mb-4 `}
     >
       {images.map((image, index) => (
         <div
@@ -81,7 +88,7 @@ function ImageGrid({ images, cols }) {
           className={`flex justify-center items-center max-w-full object-cover overflow-hidden rounded-xl`}
         >
           <img
-            className="max-w-full h-auto rounded-xl hover:scale-110 transition-all duration-500 ease-in-out"
+            className="max-w-full w-full max-h-[860px] rounded-xl hover:scale-110 transition-all duration-500 ease-in-out"
             src={image}
             alt={`Project ${index + 1}`}
           />

@@ -8,13 +8,14 @@ export const HeroSection = ({
   hasButtons,
   centered,
   gradient = "bg-gradient-to-r from-black to-gray-600 opacity-50",
+  image = placeHolderImage,
 }) => {
   return (
     <section className="relative w-full max-h-[600px]">
       <div className="relative w-full h-full min-h-[400px] max-h-[600px]">
         {/* Image */}
         <img
-          src={placeHolderImage}
+          src={image}
           alt="background"
           className="w-full h-full object-cover min-h-[400px] max-h-[600px] rounded-b-[200px] "
         />
@@ -36,8 +37,16 @@ export const HeroSection = ({
                   centered ? "" : "lg:justify-start"
                 }`}
               >
-                <Button isBlue={true} />
-                <Button isBlue={false} />
+                <Button
+                  isBlue={true}
+                  link={"/contact-us"}
+                  text={"Contact Us"}
+                />
+                <Button
+                  isBlue={false}
+                  link={"/showroom"}
+                  text={"Vist Our Show Room"}
+                />
               </div>
             )}
           </div>

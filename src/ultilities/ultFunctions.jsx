@@ -1,19 +1,22 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import PlaceholderImage from "../assets/placeholders.png";
+import logo from "../assets/logo.webp";
+import { Link } from "react-router-dom";
 
-export const Button = ({ isBlue }) => {
+export const Button = ({ isBlue, link, text }) => {
   return (
-    <button
+    <Link
+      to={link}
       className={`${
         isBlue
-          ? "inset-0 bg-gradient-to-r from-blue-700 to-blue-900"
-          : "inset-0 bg-gradient-to-r  from-orange-500 to-orange-600"
+          ? "inset-0 bg-gradient-to-r from-blue-700 to-blue-900 hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-700"
+          : "inset-0 bg-gradient-to-r  from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500"
       } 
         text-white px-4 py-2 rounded-lg text-xl`}
     >
-      Vist Our Show Room
-    </button>
+      {text}
+    </Link>
   );
 };
 
@@ -59,8 +62,10 @@ export const Header = ({ title, text }) => {
 
 export const Logo = () => (
   <div className="flex items-center">
-    <img src={PlaceholderImage} alt="Logo" className="h-16 mr-3" />
-    <h1 className="text-4xl font-bold text-white font-Exo">Bishop</h1>
+    <img src={logo} alt="Logo" className="h-14 xl:h-16 mr-1 xl:mr-3" />
+    <h1 className="text-2xl xl:text-4xl font-bold text-white font-Exo">
+      Endeavour
+    </h1>
   </div>
 );
 
@@ -79,7 +84,11 @@ export const ServiceArticle = ({ serviceInfo, isInView = true, index = 0 }) => {
           : { opacity: 0, y: 20 }
       }
     >
-      <img src={serviceInfo.image} alt="" className="rounded-t-2xl" />
+      <img
+        src={serviceInfo.image}
+        alt=""
+        className="rounded-t-2xl min-h-[340px] object-cover"
+      />
       <div className="flex flex-col gap-2  p-4 bg-gray-100 rounded-b-2xl h-full">
         {serviceInfo.heading && (
           <h2 className="font-exo text-2xl text-blue-800">
@@ -99,11 +108,11 @@ export const TitledTextSection = ({ sectionTitle, title, text, children }) => {
 
   return (
     <motion.section
-      className="container mx-auto w-full flex flex-col xl:flex-row gap-4 basis-[calc(100%/3 - 16px)] w-full items-center justify-center"
+      className="container mx-auto w-full flex flex-col xl:flex-row gap-4 basis-[calc(100%/3 - 16px)] w-full items-center justify-center h-full"
       ref={ref}
     >
       <motion.article
-        className="basis-1/2 flex flex-col gap-4 justify-center"
+        className="basis-1/2 flex flex-col gap-4 justify-center h-full"
         initial={{ opacity: 0 }}
         animate={
           isInView
@@ -158,7 +167,7 @@ export const SquareIcon = ({
   index = 0,
 }) => (
   <motion.div
-    className="flex flex-col items-start gap-4 font-Nunito bg-gray-100 rounded-lg max-w-[200px] max-h-[200px] w-full h-full box-border p-2"
+    className="flex flex-col items-start gap-4 font-Nunito bg-gray-100 rounded-lg w-full h-full box-border p-2"
     initial={{ opacity: 0, y: 20 }}
     animate={
       isInView

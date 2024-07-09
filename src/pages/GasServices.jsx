@@ -10,22 +10,27 @@ import {
 } from "../ultilities/ultFunctions";
 import { FAQs } from "../components/FAQSection";
 import { useInView, motion } from "framer-motion";
+
+import gasBoilerImage from "../assets/images/boilerservice.jpg";
+import radiatorImage from "../assets/images/radiator.jpg";
+import heatingRepair from "../assets/images/heatingrepair.jpg";
+import gasEngineeringSolutions from "../assets/images/boilerrepair.jpg";
 export const GasServices = () => {
   const servicesInfo = [
     {
       title: "GAS BOILER SERVICE",
       text: "Domestic clients and landlords. Book in now for your annual gas boiler service. We also supply landlords gas safety certificates and other gas services.",
-      image: placeholderImage,
+      image: gasBoilerImage,
     },
     {
       title: "CENTRAL HEATING INSTALLATION",
       text: "We provide new gas central heating installations. We also provide repairs and replacements for your existing radiators and boilers.",
-      image: placeholderImage,
+      image: radiatorImage,
     },
     {
       title: "HEATING REPAIR SERVICE",
       text: "We have all the tools and parts needed to provide you with heating repairs. Our expert heating engineers will get you feeling toasty again in no time.",
-      image: placeholderImage,
+      image: heatingRepair,
     },
   ];
 
@@ -89,6 +94,7 @@ export const GasServices = () => {
         }
         hasButtons={true}
         centered={false}
+        image={gasBoilerImage}
       />
 
       <ServicesSection services={servicesInfo} />
@@ -144,19 +150,19 @@ const OurServices = () => {
         title={"Comprehensive Gas Engineering Solutions"}
         text={`At Endeavour Plumbing and Heating, we offer a full range of gas engineering services for all your heating and plumbing needs. Our expert team handles central heating installations, boiler servicing and repairs, gas safety certificates, appliance installations, fault finding, power flushes, and LPG gas installations. We also provide gas hob installations and safety checks. Whether you’re a homeowner or landlord, we deliver reliable, high-quality solutions tailored to you.`}
       >
-        <img src={placeholderImage} alt="" className="rounded-t-2xl" />
+        <img src={gasEngineeringSolutions} alt="" className="rounded-t-2xl" />
       </TitledTextSection>
 
       <div
-        className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 lg:grid-cols-3 gap-4"
+        className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 lg:grid-cols-3 gap-4 mt-8"
         ref={ref}
       >
         {servicesInfo.map((service, index) => {
           return (
             <SquareIcon
               key={index}
-              title={"Test"}
-              text={"test"}
+              title={service.title}
+              text={service.text}
               icon={boiler}
               isInView={isInView}
               index={index}

@@ -7,22 +7,27 @@ import { CompanyValuesSection } from "../components/CompanyValuesSection";
 import { UserReviews } from "../components/UserReviews";
 import { BlogSection } from "../components/BlogSection";
 import { ServicesSection } from "../components/ServicesSection";
+
+import gasAndOil from "../assets/images/GasAndOil.jpg";
+import bathRoom from "../assets/images/BathroomInstallation.jpg";
+import waterLeak from "../assets/images/WaterLeak.webp";
+import heroImage from "../assets/images/Boiler-Servicing.webp";
 export const HomePage = () => {
   const servicesInfo = [
     {
       title: "Gas and Oil Services",
       text: "Expert installation, maintenance, and repair of gas and oil systems by Gas Safe registered engineers, ensuring safety and efficiency for your home.",
-      image: placeholderImage,
+      image: gasAndOil,
     },
     {
       title: "Bathroom Installations",
       text: "Expert installation, maintenance, and repair of gas and oil systems by Gas Safe registered engineers, ensuring safety and efficiency for your home.",
-      image: placeholderImage,
+      image: bathRoom,
     },
     {
       title: "Water Leak Repairs",
       text: "Detection and repair of water leaks to prevent damage and wastage, ensuring the integrity of your plumbing system.",
-      image: placeholderImage,
+      image: waterLeak,
     },
   ];
 
@@ -46,6 +51,7 @@ export const HomePage = () => {
         hasButtons={false}
         centered={true}
         gradient={"bg-gradient-to-r from-blue-200 to-blue-600 opacity-50"}
+        image={heroImage}
       />
 
       <CompanyValuesSection />

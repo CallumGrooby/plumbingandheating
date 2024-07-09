@@ -12,7 +12,8 @@ import industryLeaders from "../assets/icons/industry-leaders.png";
 import vision from "../assets/icons/vision.png";
 import principles from "../assets/icons/principles.png";
 import values from "../assets/icons/values.png";
-
+import ourApproachImage from "../assets/images/boiler.webp";
+import missionStatementImage from "../assets/images/oilheatingsystem.jpg";
 import { motion, useInView } from "framer-motion";
 
 export const CompanyValuesSection = () => {
@@ -121,11 +122,10 @@ const OurApproach = ({ selectedButton }) => {
     >
       <TitledTextSection
         sectionTitle={"Mission Statement"}
-        title={"Nobody Woo's Clients Like We Do"}
-        text={`Our mission is to deliver exceptional plumbing and heating services with a focus on customer satisfaction. 
-      We strive to be Boston's leading provider, known for our reliability, professionalism, and dedication to quality.`}
+        title={"The Gold Standard in Plumbing and Heating"}
+        text={`At the heart of our service is a commitment to excellence, innovation, and customer satisfaction. We combine decades of industry experience with cutting-edge technology to deliver reliable and efficient plumbing and heating solutions. Our dedicated team of Gas Safe registered engineers ensures you receive top-notch service with a personal touch. Here's how we make a difference:`}
       >
-        <img src={placeholderImage} alt="" className="rounded-t-2xl" />
+        <img src={ourApproachImage} alt="" className="rounded-t-2xl" />
       </TitledTextSection>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 grid-rows-1 gap-8 p-8 ">
@@ -153,6 +153,29 @@ const OurApproach = ({ selectedButton }) => {
 };
 
 const WhyUs = ({ selectedButton }) => {
+  const squareIconData = [
+    {
+      icon: boiler,
+      title: "Expert Craftsmanship",
+      text: "Our team of highly skilled, Gas Safe registered engineers is dedicated to delivering the highest quality of work, ensuring your systems are both safe and efficient.",
+    },
+    {
+      icon: boiler,
+      title: "Unmatched Customer Service",
+      text: "We put our customers at the center of everything we do. From the initial consultation to the final service, we ensure you are informed and satisfied every step of the way.",
+    },
+    {
+      icon: boiler,
+      title: "Cutting-Edge Technology",
+      text: "We leverage the latest advancements in plumbing and heating technologies to provide you with innovative and reliable solutions that save you time and money.",
+    },
+    {
+      icon: boiler,
+      title: "20+ Years of Experience",
+      text: "With over two decades of experience in the industry, we have the knowledge and expertise to tackle any plumbing or heating challenge with confidence and precision.",
+    },
+  ];
+
   return (
     <section
       className={`transition-all duration-300 w-full max-w-[1300px] mx-auto
@@ -165,15 +188,15 @@ const WhyUs = ({ selectedButton }) => {
           "Our goal is to provide our customers with highly professional plumbing services. We pride ourselves on our reliable and friendly service that customers can trust. Our expert team are on call 24/7 for any plumbing emergency."
         }
       >
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-4">
-            <SquareIcon icon={boiler} />
-            <SquareIcon icon={boiler} />
-          </div>
-          <div className="space-y-4 mt-16">
-            <SquareIcon icon={boiler} />
-            <SquareIcon icon={boiler} />
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-4 h-full">
+          {squareIconData.map((item, index) => (
+            <SquareIcon
+              key={index}
+              icon={item.icon}
+              title={item.title}
+              text={item.text}
+            />
+          ))}
         </div>
       </TitledTextSection>
     </section>
@@ -188,11 +211,13 @@ const MissionStatement = ({ selectedButton }) => {
     >
       <TitledTextSection
         sectionTitle={"Mission Statement"}
-        title={"Nobody Woo's Clients Like We Do"}
-        text={`Our mission is to deliver exceptional plumbing and heating services with a focus on customer satisfaction. 
-        We strive to be Boston's leading provider, known for our reliability, professionalism, and dedication to quality.`}
+        title={"Visionary Plumbing and Heating Solutions"}
+        text={`At the core of our mission is a drive to lead the industry with comprehensive plumbing and heating solutions. 
+          We focus on sustained growth and building customer loyalty by continually enhancing our services to meet and exceed evolving expectations.
+          Our commitment to excellence ensures top-quality outcomes, driven by a dedicated team and a customer-first approach.
+          Here's how our vision, principles, and values guide us:`}
       >
-        <img src={placeholderImage} alt="" className="rounded-t-2xl" />
+        <img src={missionStatementImage} alt="" className="rounded-t-2xl" />
       </TitledTextSection>
 
       {/* [&>*:nth-child(odd)]:flex-row-reverse lg:[&>*:nth-child(odd)]:flex-row lg:items-start items-center */}
