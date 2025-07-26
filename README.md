@@ -19,13 +19,13 @@ Designed a modern, mobile-friendly website for Endeavour, emphasizing profession
 
 ## 🌐 Live Demo
 
-View the live site →
+View the live site → https://endeavour.callumgrooby.co.uk/
 
 ---
 
 ## 📸 Screenshot
 
-
+![Screenshot](./assets/screenshot.png)
 
 ---
 
