@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Navigationbar } from "./components/Navigationbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HomePage } from "./pages/HomePage";
+import { GasServices } from "./pages/GasServices";
+import { OilHeatingService } from "./pages/OilHeatingService";
+import { StovesSection } from "./pages/StovesSection";
+import { BathroomServices } from "./pages/BathroomServices";
+import { CoreValues } from "./pages/CoreValues";
+import { FAQsPage } from "./pages/FAQsPage";
+import { Showroom } from "./pages/Showroom";
+import { Footer } from "./components/Footer";
+import { ContactUs } from "./pages/ContactUs";
+
+import {
+  faFacebook,
+  faLinkedin,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { News } from "./pages/News";
+import { BlogPost } from "./pages/BlogPost";
+library.add(faFacebook, faLinkedin, faInstagram);
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navigationbar />}>
+            <Route index path="/" element={<HomePage />} />
+
+            <Route path="/gas-services" element={<GasServices />} />
+            <Route path="/heating-services" element={<OilHeatingService />} />
+            <Route path="/log-burners-services" element={<StovesSection />} />
+            <Route
+              path="/bathroom-installations"
+              element={<BathroomServices />}
+            />
+            <Route path="/values" element={<CoreValues />} />
+            <Route path="/faqs" element={<FAQsPage />} />
+            <Route path="/showroom" element={<Showroom />} />
+            <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
+          </Route>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
+  );
 }
 
-export default App
+export default App;
